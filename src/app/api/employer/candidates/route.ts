@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import getDb from '@/lib/db';
 import { getUserFromRequest } from '@/lib/auth';
 
+export const runtime = 'edge';
+
 export async function GET(request: NextRequest) {
   const payload = getUserFromRequest(request);
   if (!payload) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -37,6 +39,6 @@ export async function GET(request: NextRequest) {
 
   sql += ' ORDER BY u.full_name LIMIT 50';
 
-  const candidates = db.prepare(sql).all(...params);
+  const candidates = (await db.prepare(sql).bind(...params).all()).results;
   return NextResponse.json({ candidates });
 }

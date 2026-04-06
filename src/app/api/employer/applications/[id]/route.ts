@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import getDb from '@/lib/db';
 import { getUserFromRequest } from '@/lib/auth';
 
+export const runtime = 'edge';
+
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const payload = getUserFromRequest(request);
@@ -9,12 +11,11 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
 
   const db = getDb();
 
-  // Verify the application belongs to a job owned by this employer
-  const app = db.prepare(`
+  const app = await db.prepare(`
     SELECT ja.* FROM job_applications ja
     JOIN jobs j ON j.id = ja.job_id
     WHERE ja.id = ? AND j.posted_by = ?
-  `).get(id, payload.userId) as Record<string, unknown> | undefined;
+  `).bind(id, payload.userId).first<Record<string, unknown>>();
 
   if (!app) return NextResponse.json({ error: 'Lamaran tidak ditemukan' }, { status: 404 });
 
@@ -24,7 +25,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     return NextResponse.json({ error: 'Status tidak valid' }, { status: 400 });
   }
 
-  db.prepare('UPDATE job_applications SET status = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?').run(status, id);
+  await db.prepare('UPDATE job_applications SET status = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?').bind(status, id).run();
 
   return NextResponse.json({ message: 'Status lamaran diperbarui' });
 }

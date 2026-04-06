@@ -2,13 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import getDb from '@/lib/db';
 import { getUserFromRequest } from '@/lib/auth';
 
+export const runtime = 'edge';
+
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const payload = getUserFromRequest(request);
   if (!payload) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const db = getDb();
-  const job = db.prepare('SELECT id, title, facility_name FROM jobs WHERE id = ? AND posted_by = ?').get(id, payload.userId) as Record<string, unknown> | undefined;
+  const job = await db.prepare('SELECT id, title, facility_name FROM jobs WHERE id = ? AND posted_by = ?').bind(id, payload.userId).first<Record<string, unknown>>();
   if (!job) return NextResponse.json({ error: 'Lowongan tidak ditemukan' }, { status: 404 });
 
   const { searchParams } = new URL(request.url);
@@ -29,7 +31,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
   query += ' ORDER BY ja.applied_at DESC';
 
-  const applicants = db.prepare(query).all(...queryParams);
+  const applicants = (await db.prepare(query).bind(...queryParams).all()).results;
 
   return NextResponse.json({ job, applicants });
 }

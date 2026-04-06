@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import getDb from '@/lib/db';
 import { comparePassword, generateToken } from '@/lib/auth';
 
+export const runtime = 'edge';
+
 export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
@@ -11,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     const db = getDb();
-    const user = db.prepare('SELECT * FROM users WHERE email = ?').get(email) as Record<string, unknown> | undefined;
+    const user = await db.prepare('SELECT * FROM users WHERE email = ?').bind(email).first<Record<string, unknown>>();
 
     if (!user || !comparePassword(password, user.password as string)) {
       return NextResponse.json({ error: 'Email atau password salah' }, { status: 401 });

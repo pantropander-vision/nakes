@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import getDb from '@/lib/db';
 
+export const runtime = 'edge';
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -27,7 +29,7 @@ export async function GET(request: NextRequest) {
 
     query += ' ORDER BY created_at DESC';
 
-    const jobs = db.prepare(query).all(...params);
+    const jobs = (await db.prepare(query).bind(...params).all()).results;
     return NextResponse.json({ jobs });
   } catch (error) {
     console.error('Get jobs error:', error);

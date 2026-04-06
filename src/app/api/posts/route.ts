@@ -2,16 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 import getDb from '@/lib/db';
 import { getUserFromRequest } from '@/lib/auth';
 
+export const runtime = 'edge';
+
 export async function GET() {
   try {
     const db = getDb();
-    const posts = db.prepare(`
+    const posts = (await db.prepare(`
       SELECT p.*, u.full_name, u.username, u.avatar_url, u.profession_type, u.specialization, u.current_workplace
       FROM posts p
       JOIN users u ON p.user_id = u.id
       ORDER BY p.created_at DESC
       LIMIT 50
-    `).all();
+    `).all()).results;
 
     return NextResponse.json({ posts });
   } catch (error) {
@@ -33,14 +35,15 @@ export async function POST(request: NextRequest) {
     }
 
     const db = getDb();
-    const result = db.prepare('INSERT INTO posts (user_id, content) VALUES (?, ?)').run(payload.userId, content.trim());
+    const result = await db.prepare('INSERT INTO posts (user_id, content) VALUES (?, ?)').bind(payload.userId, content.trim()).run();
+    const newId = result.meta.last_row_id;
 
-    const post = db.prepare(`
+    const post = await db.prepare(`
       SELECT p.*, u.full_name, u.username, u.avatar_url, u.profession_type, u.specialization, u.current_workplace
       FROM posts p
       JOIN users u ON p.user_id = u.id
       WHERE p.id = ?
-    `).get(result.lastInsertRowid);
+    `).bind(newId).first();
 
     return NextResponse.json({ post }, { status: 201 });
   } catch (error) {

@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import getDb from '@/lib/db';
 
+export const runtime = 'edge';
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -34,7 +36,7 @@ export async function GET(request: NextRequest) {
 
     query += ' ORDER BY full_name ASC LIMIT 50';
 
-    const users = db.prepare(query).all(...params);
+    const users = (await db.prepare(query).bind(...params).all()).results;
     return NextResponse.json({ users });
   } catch (error) {
     console.error('Search error:', error);

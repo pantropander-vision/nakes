@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import getDb from '@/lib/db';
 import { hashPassword, generateToken } from '@/lib/auth';
 
+export const runtime = 'edge';
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -27,7 +29,7 @@ export async function POST(request: NextRequest) {
 
     const db = getDb();
 
-    const existing = db.prepare('SELECT id FROM users WHERE email = ? OR username = ?').get(email, username);
+    const existing = await db.prepare('SELECT id FROM users WHERE email = ? OR username = ?').bind(email, username).first();
     if (existing) {
       return NextResponse.json({ error: 'Email atau username sudah terdaftar' }, { status: 409 });
     }
@@ -35,10 +37,10 @@ export async function POST(request: NextRequest) {
     const hashedPassword = hashPassword(password);
     const strExpiry = str_expiry || new Date(Date.now() + 5 * 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
-    const result = db.prepare(`
+    const result = await db.prepare(`
       INSERT INTO users (email, password, full_name, username, profession_type, specialization, str_number, str_expiry, province, kota, account_type, employer_facility_name, employer_facility_type, employer_website, employer_size)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `).run(
+    `).bind(
       email, hashedPassword, full_name, username,
       isEmployer ? 'Pemberi Kerja' : profession_type,
       specialization || null, str_number || null, strExpiry,
@@ -46,10 +48,12 @@ export async function POST(request: NextRequest) {
       isEmployer ? 'employer' : 'nakes',
       employer_facility_name || null, employer_facility_type || null,
       employer_website || null, employer_size || null
-    );
+    ).run();
+
+    const newId = result.meta.last_row_id;
 
     const token = generateToken({
-      userId: result.lastInsertRowid as number,
+      userId: newId,
       email,
       username,
     });
@@ -57,7 +61,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       token,
       user: {
-        id: result.lastInsertRowid, email, username, full_name,
+        id: newId, email, username, full_name,
         account_type: isEmployer ? 'employer' : 'nakes',
       },
     }, { status: 201 });
