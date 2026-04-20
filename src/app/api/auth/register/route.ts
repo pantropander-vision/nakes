@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
 
     const newId = result.meta.last_row_id;
 
-    const token = generateToken({
+    const token = await generateToken({
       userId: newId,
       email,
       username,

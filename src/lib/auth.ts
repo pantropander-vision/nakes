@@ -1,8 +1,10 @@
-import jwt from 'jsonwebtoken';
+import { SignJWT, jwtVerify } from 'jose';
 import bcrypt from 'bcryptjs';
 import { NextRequest } from 'next/server';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'nakes-jwt-secret-key-2024';
+const JWT_SECRET = new TextEncoder().encode(
+  process.env.JWT_SECRET || 'nakes-jwt-secret-key-2024'
+);
 
 export interface JwtPayload {
   userId: number;
@@ -18,13 +20,17 @@ export function comparePassword(password: string, hash: string): boolean {
   return bcrypt.compareSync(password, hash);
 }
 
-export function generateToken(payload: JwtPayload): string {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: '7d' });
+export async function generateToken(payload: JwtPayload): Promise<string> {
+  return new SignJWT({ ...payload })
+    .setProtectedHeader({ alg: 'HS256' })
+    .setExpirationTime('7d')
+    .sign(JWT_SECRET);
 }
 
-export function verifyToken(token: string): JwtPayload | null {
+export async function verifyToken(token: string): Promise<JwtPayload | null> {
   try {
-    return jwt.verify(token, JWT_SECRET) as JwtPayload;
+    const { payload } = await jwtVerify(token, JWT_SECRET);
+    return payload as unknown as JwtPayload;
   } catch {
     return null;
   }
@@ -38,7 +44,7 @@ export function getTokenFromRequest(request: NextRequest): string | null {
   return null;
 }
 
-export function getUserFromRequest(request: NextRequest): JwtPayload | null {
+export async function getUserFromRequest(request: NextRequest): Promise<JwtPayload | null> {
   const token = getTokenFromRequest(request);
   if (!token) return null;
   return verifyToken(token);

@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Email atau password salah' }, { status: 401 });
     }
 
-    const token = generateToken({
+    const token = await generateToken({
       userId: user.id as number,
       email: user.email as string,
       username: user.username as string,

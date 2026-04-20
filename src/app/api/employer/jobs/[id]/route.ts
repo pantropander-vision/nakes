@@ -6,7 +6,7 @@ export const runtime = 'edge';
 
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const payload = getUserFromRequest(request);
+  const payload = await getUserFromRequest(request);
   if (!payload) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const db = getDb();
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const payload = getUserFromRequest(request);
+  const payload = await getUserFromRequest(request);
   if (!payload) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const db = getDb();
@@ -42,7 +42,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
 
 export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const payload = getUserFromRequest(request);
+  const payload = await getUserFromRequest(request);
   if (!payload) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const db = getDb();

@@ -63,6 +63,124 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* US Nursing Opportunities */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-800 text-white py-20 lg:py-28">
+        {/* Decorative blobs */}
+        <div className="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-blue-600/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-indigo-600/20 blur-3xl" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+            {/* ── Text Content ── */}
+            <div className="lg:w-1/2">
+              <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-2 text-blue-300 text-sm font-semibold mb-6">
+                &#127482;&#127480; Peluang Karir Internasional
+              </div>
+
+              <h2 className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+                Wujudkan Impian{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                  Berkarir di Amerika Serikat
+                </span>
+              </h2>
+
+              <p className="text-slate-300 text-lg mb-8 leading-relaxed">
+                Ribuan perawat Indonesia berhasil berkarir di AS. Program kami dirancang khusus untuk pemegang{' '}
+                <span className="text-white font-semibold">STR (Surat Tanda Registrasi)</span> dengan jalur terarah
+                menuju lisensi <span className="text-white font-semibold">RN (Registered Nurse)</span> Amerika —
+                termasuk NCLEX-RN, visa sponsorship, dan dukungan relokasi.
+              </p>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-3 mb-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/10">
+                  <div className="text-2xl font-bold text-blue-300">2,000+</div>
+                  <div className="text-xs text-slate-400 mt-1 leading-snug">Posisi Tersedia</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/10">
+                  <div className="text-xl font-bold text-emerald-400">$60K–$120K</div>
+                  <div className="text-xs text-slate-400 mt-1 leading-snug">Gaji Per Tahun (USD)</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/10">
+                  <div className="text-2xl font-bold text-yellow-300">Visa</div>
+                  <div className="text-xs text-slate-400 mt-1 leading-snug">Sponsor Tersedia</div>
+                </div>
+              </div>
+
+              {/* Pathway checklist */}
+              <ul className="space-y-3 mb-10">
+                {[
+                  'STR aktif sebagai syarat utama pendaftaran',
+                  'Persiapan NCLEX-RN & English proficiency (IELTS/OET)',
+                  'Evaluasi kredensial CGFNS & VisaScreen',
+                  'Visa sponsorship H-1B / EB-3 oleh employer AS',
+                  'Dukungan relokasi & orientasi kehidupan di AS',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
+                    <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center">
+                      <svg className="w-3 h-3 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/register"
+                  className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold px-7 py-3 rounded-xl hover:from-blue-400 hover:to-cyan-400 transition-all shadow-lg shadow-blue-500/30 text-base"
+                >
+                  Daftar Program US Nurse
+                </Link>
+                <Link
+                  href="/register"
+                  className="border border-white/30 text-white font-semibold px-7 py-3 rounded-xl hover:bg-white/10 transition text-base"
+                >
+                  Pelajari Lebih Lanjut
+                </Link>
+              </div>
+            </div>
+
+            {/* ── Image Grid ── */}
+            <div className="lg:w-1/2 w-full">
+              <div className="grid grid-cols-2 gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800"
+                  alt="Perawat profesional"
+                  className="rounded-2xl object-cover w-full h-52 lg:h-60 shadow-xl shadow-black/40"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1492666673288-3c4b4f1a8b6a?w=800"
+                  alt="Statue of Liberty"
+                  className="rounded-2xl object-cover w-full h-52 lg:h-60 shadow-xl shadow-black/40"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800"
+                  alt="Golden Gate Bridge San Francisco"
+                  className="rounded-2xl object-cover w-full h-52 lg:h-60 shadow-xl shadow-black/40"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800"
+                  alt="Perawat bekerja"
+                  className="rounded-2xl object-cover w-full h-52 lg:h-60 shadow-xl shadow-black/40"
+                />
+              </div>
+              {/* Caption badge */}
+              <div className="mt-4 flex justify-center">
+                <span className="text-xs text-slate-500 italic">
+                  Bergabung dengan 500+ perawat Indonesia yang sudah berkarir di AS
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

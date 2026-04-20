@@ -5,7 +5,7 @@ import { getUserFromRequest } from '@/lib/auth';
 export const runtime = 'edge';
 
 export async function GET(request: NextRequest) {
-  const payload = getUserFromRequest(request);
+  const payload = await getUserFromRequest(request);
   if (!payload) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const db = getDb();
@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const payload = getUserFromRequest(request);
+  const payload = await getUserFromRequest(request);
   if (!payload) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const { candidate_id, notes } = await request.json();
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-  const payload = getUserFromRequest(request);
+  const payload = await getUserFromRequest(request);
   if (!payload) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const { candidate_id } = await request.json();
