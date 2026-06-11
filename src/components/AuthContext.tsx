@@ -16,6 +16,7 @@ interface User {
   current_workplace?: string;
   bio?: string;
   account_type?: string;
+  is_admin?: number;
   employer_facility_name?: string;
   employer_facility_type?: string;
   employer_description?: string;

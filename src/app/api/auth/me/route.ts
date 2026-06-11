@@ -11,11 +11,12 @@ export async function GET(request: NextRequest) {
   }
 
   const db = getDb();
-  const user = await db.prepare('SELECT id, username, email, full_name, profession_type, specialization, avatar_url, province, kota, current_workplace, bio, account_type, employer_facility_name, employer_facility_type, employer_description, employer_website, employer_size FROM users WHERE id = ?').bind(payload.userId).first();
+  const user = await db.prepare('SELECT * FROM users WHERE id = ?').bind(payload.userId).first<Record<string, unknown>>();
 
   if (!user) {
     return NextResponse.json({ error: 'User tidak ditemukan' }, { status: 404 });
   }
 
+  delete user.password;
   return NextResponse.json({ user });
 }

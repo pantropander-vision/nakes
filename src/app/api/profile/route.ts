@@ -18,12 +18,30 @@ export async function GET(request: NextRequest) {
       SELECT id, username, email, full_name, profession_type, specialization, nurse_level,
              str_number, str_expiry, str_status, sip_number, sip_facility, skp_credits,
              professional_association, province, kota, current_workplace, current_workplace_type,
-             bio, avatar_url, phone, created_at
+             bio, avatar_url, phone, created_at, account_type,
+             employer_facility_name, employer_facility_type, employer_description,
+             employer_website, employer_size
       FROM users WHERE username = ?
     `).bind(username).first<Record<string, unknown>>();
 
     if (!user) {
       return NextResponse.json({ error: 'Profil tidak ditemukan' }, { status: 404 });
+    }
+
+    // Profil pemberi kerja: tampilkan info fasilitas + lowongan aktifnya
+    if (user.account_type === 'employer') {
+      const jobs = (await db.prepare(
+        'SELECT id, title, facility_name, location, province, employment_type, profession_type, created_at FROM jobs WHERE posted_by = ? AND is_active = 1 ORDER BY created_at DESC'
+      ).bind(user.id).all()).results;
+
+      return NextResponse.json({
+        user,
+        experiences: [],
+        education: [],
+        skills: [],
+        jobs,
+        connectionCount: 0,
+      });
     }
 
     const experiences = (await db.prepare('SELECT * FROM experiences WHERE user_id = ? ORDER BY is_current DESC, start_date DESC').bind(user.id).all()).results;
@@ -40,6 +58,7 @@ export async function GET(request: NextRequest) {
       experiences,
       education,
       skills,
+      jobs: [],
       connectionCount: connectionCount?.count ?? 0,
     });
   } catch (error) {

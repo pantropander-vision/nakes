@@ -12,12 +12,67 @@ export interface JwtPayload {
   username: string;
 }
 
-export function hashPassword(password: string): string {
-  return bcrypt.hashSync(password, 10);
+// PBKDF2 via Web Crypto: native and fast, unlike pure-JS bcrypt which
+// exceeds the Workers CPU limit on the Cloudflare edge runtime.
+const PBKDF2_ITERATIONS = 100000;
+
+function toHex(bytes: Uint8Array): string {
+  return Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-export function comparePassword(password: string, hash: string): boolean {
-  return bcrypt.compareSync(password, hash);
+function fromHex(hex: string): Uint8Array {
+  const bytes = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < bytes.length; i++) {
+    bytes[i] = parseInt(hex.slice(i * 2, i * 2 + 2), 16);
+  }
+  return bytes;
+}
+
+async function deriveKey(password: string, salt: Uint8Array, iterations: number): Promise<string> {
+  const keyMaterial = await crypto.subtle.importKey(
+    'raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits']
+  );
+  const bits = await crypto.subtle.deriveBits(
+    { name: 'PBKDF2', hash: 'SHA-256', salt: salt as BufferSource, iterations },
+    keyMaterial,
+    256
+  );
+  return toHex(new Uint8Array(bits));
+}
+
+export async function hashPassword(password: string): Promise<string> {
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const hash = await deriveKey(password, salt, PBKDF2_ITERATIONS);
+  return `pbkdf2:${PBKDF2_ITERATIONS}:${toHex(salt)}:${hash}`;
+}
+
+function timingSafeEqual(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) {
+    diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  }
+  return diff === 0;
+}
+
+export async function verifyPassword(password: string, stored: string): Promise<boolean> {
+  if (!stored) return false;
+  if (stored.startsWith('pbkdf2:')) {
+    const [, iterStr, saltHex, hashHex] = stored.split(':');
+    const hash = await deriveKey(password, fromHex(saltHex), parseInt(iterStr, 10));
+    return timingSafeEqual(hash, hashHex);
+  }
+  // Legacy bcrypt hash from the old Node server deployment
+  try {
+    return await bcrypt.compare(password, stored);
+  } catch {
+    return false;
+  }
+}
+
+// Legacy hashes should be upgraded to PBKDF2 on the next successful login
+export function passwordNeedsRehash(stored: string): boolean {
+  return !stored.startsWith('pbkdf2:');
 }
 
 export async function generateToken(payload: JwtPayload): Promise<string> {
@@ -48,4 +103,8 @@ export async function getUserFromRequest(request: NextRequest): Promise<JwtPaylo
   const token = getTokenFromRequest(request);
   if (!token) return null;
   return verifyToken(token);
+}
+
+export function generateResetToken(): string {
+  return toHex(crypto.getRandomValues(new Uint8Array(32)));
 }

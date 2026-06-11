@@ -20,6 +20,9 @@ export async function POST(request: NextRequest) {
     if (!email || !password || !full_name || !username) {
       return NextResponse.json({ error: 'Field wajib harus diisi' }, { status: 400 });
     }
+    if (password.length < 6) {
+      return NextResponse.json({ error: 'Password minimal 6 karakter' }, { status: 400 });
+    }
     if (!isEmployer && !profession_type) {
       return NextResponse.json({ error: 'Jenis profesi harus diisi' }, { status: 400 });
     }
@@ -34,7 +37,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Email atau username sudah terdaftar' }, { status: 409 });
     }
 
-    const hashedPassword = hashPassword(password);
+    const hashedPassword = await hashPassword(password);
     const strExpiry = str_expiry || new Date(Date.now() + 5 * 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
     const result = await db.prepare(`
