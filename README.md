@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NakesID.com
 
-## Getting Started
+Platform jaringan profesional dan lowongan kerja untuk tenaga kesehatan Indonesia.
+Berjalan di **Cloudflare Pages** (Next.js via `@cloudflare/next-on-pages`) dengan database **Cloudflare D1**.
 
-First, run the development server:
+## Pengembangan Lokal
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3461
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+API route berjalan di edge runtime dan butuh binding D1; untuk pengujian penuh gunakan:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run pages:build
+npx wrangler pages dev .vercel/output/static
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
+Push ke branch `main` otomatis men-deploy lewat GitHub Actions (`.github/workflows/deploy.yml`).
+Workflow ini juga menjalankan migrasi schema D1 (`migrations/`) sebelum deploy.
 
-To learn more about Next.js, take a look at the following resources:
+## Operasional Database (D1)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Gunakan workflow **D1 Database Tools** di tab GitHub Actions (`Run workflow`):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Aksi | Fungsi |
+|---|---|
+| `apply-migrations` | Terapkan migrasi schema (juga otomatis saat deploy) |
+| `restore-data` | **Aktivasi kembali akun-akun lama**: impor data dari `data/nakes-restore-data.sql` (memakai `INSERT OR IGNORE`, aman dijalankan berulang, tidak menimpa data yang sudah ada) |
+| `set-admin` | Jadikan akun sebagai admin — isi input `email` dengan email member |
 
-## Deploy on Vercel
+Setelah `set-admin`, member tersebut akan melihat menu **Kelola Member** (`/admin/members`)
+untuk edit, hapus, reset password, dan mengangkat admin lain.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Catatan Teknis
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Password hashing** memakai PBKDF2 (Web Crypto) karena bcrypt murni-JS melampaui batas CPU
+  Workers di edge runtime (ini penyebab error "server error" saat daftar/login setelah migrasi
+  ke Cloudflare). Hash bcrypt lama tetap diverifikasi dan otomatis di-upgrade ke PBKDF2 saat
+  login berhasil. Jika login akun lama masih gagal karena batas CPU, gunakan **Lupa Password**
+  atau reset lewat admin — keduanya membuat hash PBKDF2 baru.
+- **Lupa password** (`/forgot-password`) belum memakai email (tidak ada layanan email);
+  verifikasi memakai kombinasi email + username. Jika nanti ada layanan email (mis. Resend /
+  Mailchannels), kirim `reset_token` lewat email alih-alih mengembalikannya langsung di respons
+  API (`src/app/api/auth/forgot-password/route.ts`).

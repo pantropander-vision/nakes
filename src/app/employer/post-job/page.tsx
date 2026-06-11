@@ -10,7 +10,7 @@ export default function PostJobPage() {
   const [error, setError] = useState('');
   const [form, setForm] = useState({
     title: '', facility_name: '', facility_type: '', location: '', province: '',
-    profession_type: '', specialization: '', employment_type: '',
+    profession_type: '', profession_custom: '', specialization: '', employment_type: '',
     salary_min: '', salary_max: '', bpjs_required: '1',
     description: '', requirements: '',
   });
@@ -20,10 +20,15 @@ export default function PostJobPage() {
   };
 
   const showSpecialization = form.profession_type === 'Dokter Spesialis' || form.profession_type === 'Dokter Gigi Spesialis';
+  const isCustomProfession = form.profession_type === '__custom__';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    if (isCustomProfession && !form.profession_custom.trim()) {
+      setError('Tuliskan nama profesi yang dibutuhkan');
+      return;
+    }
     setLoading(true);
     try {
       const token = localStorage.getItem('nakes_token');
@@ -32,6 +37,7 @@ export default function PostJobPage() {
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({
           ...form,
+          profession_type: isCustomProfession ? form.profession_custom.trim() : form.profession_type,
           salary_min: form.salary_min ? parseInt(form.salary_min) : null,
           salary_max: form.salary_max ? parseInt(form.salary_max) : null,
           bpjs_required: parseInt(form.bpjs_required),
@@ -106,7 +112,16 @@ export default function PostJobPage() {
                   {types.map(t => <option key={t} value={t}>{t}</option>)}
                 </optgroup>
               ))}
+              <optgroup label="Tidak ada di daftar?">
+                <option value="__custom__">Profesi Lainnya (isi sendiri)</option>
+              </optgroup>
             </select>
+            {isCustomProfession && (
+              <input
+                name="profession_custom" value={form.profession_custom} onChange={handleChange} required
+                className="mt-2 w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+                placeholder="Tuliskan profesi yang dibutuhkan, cth: Perekam Medis" />
+            )}
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Jenis Kepegawaian *</label>

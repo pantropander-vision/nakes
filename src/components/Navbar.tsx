@@ -31,7 +31,10 @@ export default function Navbar() {
     { href: '/employer/candidates', label: 'Kandidat' },
   ];
 
-  const navLinks = isEmployer ? employerLinks : nakesLinks;
+  const navLinks = [...(isEmployer ? employerLinks : nakesLinks)];
+  if (user?.is_admin) {
+    navLinks.push({ href: '/admin/members', label: 'Kelola Member' });
+  }
 
   return (
     <nav className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">

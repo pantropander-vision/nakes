@@ -171,7 +171,7 @@ export default function HomePage() {
               <h3 className="font-semibold text-gray-900 mb-4">Lowongan Terbaru</h3>
               <div className="space-y-3">
                 {jobs.map(job => (
-                  <Link key={job.id} href="/jobs" className="block group">
+                  <Link key={job.id} href={`/jobs/${job.id}`} className="block group">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-primary transition">{job.title}</p>
                     <p className="text-xs text-gray-500">{job.facility_name} - {job.location}</p>
                     <span className="inline-block mt-1 text-xs bg-primary-50 text-primary-700 px-2 py-0.5 rounded">{job.employment_type}</span>

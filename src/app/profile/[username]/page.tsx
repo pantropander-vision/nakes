@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '@/components/AuthContext';
 import { api } from '@/lib/api';
 import { useParams } from 'next/navigation';
+import Link from 'next/link';
 
 const PROVINCES = [
   'Aceh','Sumatera Utara','Sumatera Barat','Riau','Kepulauan Riau','Jambi',
@@ -45,6 +46,23 @@ interface UserProfile {
   avatar_url: string | null;
   phone: string | null;
   created_at: string;
+  account_type: string | null;
+  employer_facility_name: string | null;
+  employer_facility_type: string | null;
+  employer_description: string | null;
+  employer_website: string | null;
+  employer_size: string | null;
+}
+
+interface EmployerJob {
+  id: number;
+  title: string;
+  facility_name: string;
+  location: string;
+  province: string;
+  employment_type: string;
+  profession_type: string;
+  created_at: string;
 }
 
 interface Experience {
@@ -82,6 +100,7 @@ export default function ProfilePage() {
   const [experiences, setExperiences] = useState<Experience[]>([]);
   const [education, setEducation] = useState<Education[]>([]);
   const [skills, setSkills] = useState<Skill[]>([]);
+  const [jobs, setJobs] = useState<EmployerJob[]>([]);
   const [connectionCount, setConnectionCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [editOpen, setEditOpen] = useState(false);
@@ -95,6 +114,7 @@ export default function ProfilePage() {
         setExperiences(data.experiences);
         setEducation(data.education);
         setSkills(data.skills);
+        setJobs(data.jobs || []);
         setConnectionCount(data.connectionCount);
       })
       .catch(() => {})
@@ -142,6 +162,67 @@ export default function ProfilePage() {
 
   const isOwn = authUser?.username === profile.username;
   const strActive = profile.str_status === 'Aktif';
+
+  // Profil pemberi kerja (employer) ditampilkan berbeda dari profil nakes
+  if (profile.account_type === 'employer') {
+    const facilityName = profile.employer_facility_name || profile.full_name;
+    return (
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
+        <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
+          <div className="h-32 bg-gradient-to-r from-primary-600 to-accent" />
+          <div className="px-6 pb-6">
+            <div className="flex flex-col sm:flex-row items-start gap-4 -mt-12">
+              <div className="w-24 h-24 bg-primary-100 rounded-full flex items-center justify-center text-primary text-3xl font-bold border-4 border-white shadow">
+                {facilityName?.charAt(0)}
+              </div>
+              <div className="flex-1 pt-2 sm:pt-14">
+                <h1 className="text-2xl font-bold text-gray-900">{facilityName}</h1>
+                <p className="text-primary font-medium">
+                  Pemberi Kerja{profile.employer_facility_type ? ` · ${profile.employer_facility_type}` : ''}
+                </p>
+                <p className="text-sm text-gray-400 mt-1">
+                  {[profile.kota, profile.province].filter(Boolean).join(', ')}
+                  {profile.employer_size && ` · ${profile.employer_size} karyawan`}
+                </p>
+                {profile.employer_website && (
+                  <a href={profile.employer_website} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline mt-1 inline-block">
+                    {profile.employer_website}
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {profile.employer_description && (
+          <div className="bg-white rounded-xl shadow-sm border p-6">
+            <h2 className="font-semibold text-gray-900 mb-2">Tentang Fasilitas</h2>
+            <p className="text-sm text-gray-600 whitespace-pre-wrap">{profile.employer_description}</p>
+          </div>
+        )}
+
+        <div className="bg-white rounded-xl shadow-sm border p-6">
+          <h2 className="font-semibold text-gray-900 mb-4">Lowongan Aktif ({jobs.length})</h2>
+          {jobs.length === 0 ? (
+            <p className="text-sm text-gray-400">Tidak ada lowongan aktif saat ini</p>
+          ) : (
+            <div className="grid sm:grid-cols-2 gap-3">
+              {jobs.map(job => (
+                <Link key={job.id} href={`/jobs/${job.id}`} className="border rounded-lg p-4 hover:border-primary hover:shadow-sm transition block">
+                  <p className="font-medium text-gray-900">{job.title}</p>
+                  <p className="text-xs text-gray-500 mt-1">{job.facility_name} · {job.location}, {job.province}</p>
+                  <div className="flex gap-2 mt-2">
+                    <span className="text-xs bg-primary-50 text-primary-700 px-2 py-0.5 rounded">{job.employment_type}</span>
+                    <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">{job.profession_type}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
