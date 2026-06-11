@@ -34,28 +34,36 @@ jobs:
           node-version: '20'
 
       # Secret CLOUDFLARE_API_TOKEN tersimpan dengan teks tambahan/baris baru di
-      # dalamnya sehingga wrangler gagal. Coba tiap potongan nilai secret terhadap
-      # endpoint verifikasi token Cloudflare dan pakai yang benar-benar valid.
+      # dalamnya. Coba tiap potongan nilai secret dan pakai yang benar-benar punya
+      # akses D1 + Pages di akun ini (tokens/verify saja tidak cukup — token bisa
+      # valid tapi tidak punya izin, error 7403).
       - name: Resolve Cloudflare token
         env:
           RAW_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
+          api="https://api.cloudflare.com/client/v4"
           candidates=()
           for c in $RAW_TOKEN; do candidates+=("$c"); done
           candidates+=("$(printf '%s' "$RAW_TOKEN" | tr -d '[:space:]')")
+          i=0
           for c in "${candidates[@]}"; do
+            i=$((i+1))
             c="${c#Bearer}"
             c=$(printf '%s' "$c" | tr -cd 'A-Za-z0-9_-')
             [ -z "$c" ] && continue
-            res=$(curl -s -H "Authorization: Bearer $c" https://api.cloudflare.com/client/v4/user/tokens/verify || true)
-            if echo "$res" | grep -q '"success": *true'; then
+            auth=(-H "Authorization: Bearer $c")
+            verify=$(curl -s "${auth[@]}" "$api/user/tokens/verify" | grep -c '"success": *true' || true)
+            d1=$(curl -s "${auth[@]}" "$api/accounts/$CLOUDFLARE_ACCOUNT_ID/d1/database" | grep -c '"success": *true' || true)
+            pages=$(curl -s "${auth[@]}" "$api/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects" | grep -c '"success": *true' || true)
+            echo "kandidat #$i (panjang ${#c}): verify=$verify d1=$d1 pages=$pages"
+            if [ "$d1" -ge 1 ] && [ "$pages" -ge 1 ]; then
               echo "::add-mask::$c"
               echo "CLOUDFLARE_API_TOKEN=$c" >> "$GITHUB_ENV"
-              echo "Token Cloudflare valid ditemukan di dalam secret."
+              echo "Token Cloudflare dengan akses D1 + Pages ditemukan."
               exit 0
             fi
           done
-          echo "::error::Tidak ada token valid di secret CLOUDFLARE_API_TOKEN. Buat ulang secret di Settings -> Secrets and variables -> Actions: paste API token Cloudflare dalam SATU baris (buat di dash.cloudflare.com -> My Profile -> API Tokens, izin: Cloudflare Pages:Edit dan D1:Edit)."
+          echo "::error::Tidak ada token di secret CLOUDFLARE_API_TOKEN yang punya akses D1 + Pages untuk akun $CLOUDFLARE_ACCOUNT_ID. Buat token baru di dash.cloudflare.com -> My Profile -> API Tokens -> Create Token, dengan permission 'Cloudflare Pages:Edit' dan 'D1:Edit' untuk akun tersebut, lalu simpan ulang sebagai secret CLOUDFLARE_API_TOKEN (satu baris) di Settings -> Secrets and variables -> Actions."
           exit 1
 
       - name: Apply migrations
