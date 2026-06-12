@@ -18,231 +18,231 @@ INSERT OR IGNORE INTO users (id,username,email,password,full_name,profession_typ
 INSERT OR IGNORE INTO users (id,username,email,password,full_name,profession_type,specialization,nurse_level,str_number,str_expiry,str_status,sip_number,sip_facility,skp_credits,professional_association,province,kota,current_workplace,current_workplace_type,bio,avatar_url,phone,created_at,updated_at,account_type,employer_facility_name,employer_facility_type,employer_description,employer_website,employer_size) VALUES(18,'prodia_hrd','prodia@nakes.id','$2b$10$0tzqXPq12YBLp/H/8fXOZOzZaMoHXg4j6ds2oSabH2lf/7LMQjhxy','HRD Prodia','Pemberi Kerja',NULL,NULL,NULL,NULL,'Aktif',NULL,NULL,0,NULL,'DKI Jakarta','Jakarta Pusat',NULL,NULL,'Divisi SDM PT Prodia Widyahusada Tbk',NULL,'021-31936188','2026-04-03 21:53:13','2026-04-03 21:53:13','employer','Prodia Widyahusada','Klinik Utama','Prodia adalah laboratorium klinik terbesar di Indonesia dengan lebih dari 270 outlet di seluruh Indonesia. Menyediakan layanan pemeriksaan laboratorium lengkap dengan standar mutu internasional ISO 15189.','https://www.prodia.co.id','500+');
 INSERT OR IGNORE INTO users (id,username,email,password,full_name,profession_type,specialization,nurse_level,str_number,str_expiry,str_status,sip_number,sip_facility,skp_credits,professional_association,province,kota,current_workplace,current_workplace_type,bio,avatar_url,phone,created_at,updated_at,account_type,employer_facility_name,employer_facility_type,employer_description,employer_website,employer_size) VALUES(19,'Nurdiansyah','iandelsyah89@gmail.com','$2b$10$6dxO4i/XX2aJR6yeUpBhKuwxbu26jI6IXm.RltPqyQLgN04g50dlm','Nurdiansyah','Ners (S1+Profesi)',NULL,NULL,NULL,'2031-04-03','Aktif',NULL,NULL,0,NULL,'DKI Jakarta',NULL,NULL,NULL,NULL,NULL,NULL,'2026-04-04 14:30:14','2026-04-04 14:30:14','nakes',NULL,NULL,NULL,NULL,NULL);
 INSERT OR IGNORE INTO users (id,username,email,password,full_name,profession_type,specialization,nurse_level,str_number,str_expiry,str_status,sip_number,sip_facility,skp_credits,professional_association,province,kota,current_workplace,current_workplace_type,bio,avatar_url,phone,created_at,updated_at,account_type,employer_facility_name,employer_facility_type,employer_description,employer_website,employer_size) VALUES(20,'yudi.chandra','yudi.chandra0904@gmail.com','$2b$10$j7RhfqVJ71KrYo9mRYdPceXwdpInuqRrWc7a7SFBMHRUFurezBJ1K','Yudi Chandra','Ners (S1+Profesi)',NULL,NULL,NULL,'2031-04-05','Aktif',NULL,NULL,0,NULL,'Jawa Barat',NULL,NULL,NULL,NULL,NULL,NULL,'2026-04-06 03:21:21','2026-04-06 03:21:21','nakes',NULL,NULL,NULL,NULL,NULL);
-INSERT OR IGNORE INTO posts VALUES(1,1,'Baru saja menyelesaikan prosedur PCI kompleks pada pasien dengan triple vessel disease. Tim katlab RSCM bekerja sangat baik! Reminder: chest pain dengan onset <12 jam adalah golden period untuk intervensi. #Kardiologi #RSCM',NULL,23,0,'2024-01-15 09:30:00');
-INSERT OR IGNORE INTO posts VALUES(2,2,'Penting untuk orang tua: jadwal imunisasi anak harus tepat waktu. Jangan tunda karena mitos yang beredar. Vaksinasi adalah cara terbaik melindungi buah hati Anda. Konsultasikan ke dokter anak terdekat. #ImunisasiAnak',NULL,45,0,'2024-01-14 14:00:00');
-INSERT OR IGNORE INTO posts VALUES(3,4,'Hari ini kunjungan posyandu lansia di wilayah kerja Puskesmas Cikutra. Deteksi dini hipertensi dan diabetes sangat penting untuk mencegah komplikasi. Mari jaga kesehatan sejak dini! #PromosiKesehatan',NULL,12,0,'2024-01-13 10:00:00');
-INSERT OR IGNORE INTO posts VALUES(4,6,'Tips untuk sesama perawat ICU: selalu monitoring hemodinamik secara ketat pada pasien post cardiac surgery. Early warning score sangat membantu dalam deteksi dini perburukan. Stay vigilant! #NursingICU',NULL,18,0,'2024-01-12 16:00:00');
-INSERT OR IGNORE INTO posts VALUES(5,9,'Edukasi kepada ibu hamil tentang tanda bahaya kehamilan sangat krusial. Jika mengalami perdarahan, sakit kepala hebat, atau pandangan kabur, segera ke faskes terdekat. #KehamilanSehat',NULL,15,0,'2024-01-11 11:00:00');
-INSERT OR IGNORE INTO posts VALUES(6,12,'Pasien post TKR (Total Knee Replacement) hari ke-3 sudah bisa jalan dengan walker. Rehabilitasi dini sangat penting untuk pemulihan optimal. Semangat untuk semua pasien ortopedi! #Fisioterapi',NULL,20,0,'2024-01-10 13:30:00');
-INSERT OR IGNORE INTO posts VALUES(7,13,'Mental health awareness: tidak ada salahnya meminta bantuan profesional. Kecemasan dan depresi bisa ditangani dengan baik melalui terapi yang tepat. Jangan ragu berkonsultasi. #KesehatanMental',NULL,35,0,'2024-01-09 15:00:00');
-INSERT OR IGNORE INTO posts VALUES(8,15,'Presentasi hasil penelitian tentang digital orthodontics di Kongres PDGI. Teknologi aligner semakin berkembang dan memberikan pilihan treatment yang lebih nyaman untuk pasien. #Ortodonsi',NULL,28,0,'2024-01-08 09:00:00');
-INSERT OR IGNORE INTO connections VALUES(1,1,2,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(2,1,3,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(3,1,6,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(4,2,4,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(5,2,8,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(6,3,9,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(7,4,5,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(8,6,7,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(9,6,8,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(10,10,9,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(11,11,12,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(12,14,15,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(13,13,2,'accepted','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(14,7,8,'pending','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(15,11,1,'pending','2026-04-03 21:53:10');
-INSERT OR IGNORE INTO connections VALUES(16,19,8,'pending','2026-04-04 14:31:19');
-INSERT OR IGNORE INTO connections VALUES(17,19,2,'pending','2026-04-04 14:31:21');
-INSERT OR IGNORE INTO jobs VALUES(1,1,'Dokter Spesialis Jantung dan Pembuluh Darah','RS Hermina Bekasi','RS Tipe B','Bekasi','Jawa Barat','Dokter Spesialis','Sp.JP','Tetap',35000000,60000000,1,'Dibutuhkan Dokter Spesialis Jantung dan Pembuluh Darah untuk bergabung dengan tim kardiologi RS Hermina Bekasi. Bertanggung jawab atas pelayanan rawat jalan dan rawat inap kardiologi, prosedur diagnostik non-invasif, serta konsultasi antar bagian.','- STR dan SIP aktif
+INSERT OR IGNORE INTO posts (id,user_id,content,image_url,likes,comments_count,created_at) VALUES(1,1,'Baru saja menyelesaikan prosedur PCI kompleks pada pasien dengan triple vessel disease. Tim katlab RSCM bekerja sangat baik! Reminder: chest pain dengan onset <12 jam adalah golden period untuk intervensi. #Kardiologi #RSCM',NULL,23,0,'2024-01-15 09:30:00');
+INSERT OR IGNORE INTO posts (id,user_id,content,image_url,likes,comments_count,created_at) VALUES(2,2,'Penting untuk orang tua: jadwal imunisasi anak harus tepat waktu. Jangan tunda karena mitos yang beredar. Vaksinasi adalah cara terbaik melindungi buah hati Anda. Konsultasikan ke dokter anak terdekat. #ImunisasiAnak',NULL,45,0,'2024-01-14 14:00:00');
+INSERT OR IGNORE INTO posts (id,user_id,content,image_url,likes,comments_count,created_at) VALUES(3,4,'Hari ini kunjungan posyandu lansia di wilayah kerja Puskesmas Cikutra. Deteksi dini hipertensi dan diabetes sangat penting untuk mencegah komplikasi. Mari jaga kesehatan sejak dini! #PromosiKesehatan',NULL,12,0,'2024-01-13 10:00:00');
+INSERT OR IGNORE INTO posts (id,user_id,content,image_url,likes,comments_count,created_at) VALUES(4,6,'Tips untuk sesama perawat ICU: selalu monitoring hemodinamik secara ketat pada pasien post cardiac surgery. Early warning score sangat membantu dalam deteksi dini perburukan. Stay vigilant! #NursingICU',NULL,18,0,'2024-01-12 16:00:00');
+INSERT OR IGNORE INTO posts (id,user_id,content,image_url,likes,comments_count,created_at) VALUES(5,9,'Edukasi kepada ibu hamil tentang tanda bahaya kehamilan sangat krusial. Jika mengalami perdarahan, sakit kepala hebat, atau pandangan kabur, segera ke faskes terdekat. #KehamilanSehat',NULL,15,0,'2024-01-11 11:00:00');
+INSERT OR IGNORE INTO posts (id,user_id,content,image_url,likes,comments_count,created_at) VALUES(6,12,'Pasien post TKR (Total Knee Replacement) hari ke-3 sudah bisa jalan dengan walker. Rehabilitasi dini sangat penting untuk pemulihan optimal. Semangat untuk semua pasien ortopedi! #Fisioterapi',NULL,20,0,'2024-01-10 13:30:00');
+INSERT OR IGNORE INTO posts (id,user_id,content,image_url,likes,comments_count,created_at) VALUES(7,13,'Mental health awareness: tidak ada salahnya meminta bantuan profesional. Kecemasan dan depresi bisa ditangani dengan baik melalui terapi yang tepat. Jangan ragu berkonsultasi. #KesehatanMental',NULL,35,0,'2024-01-09 15:00:00');
+INSERT OR IGNORE INTO posts (id,user_id,content,image_url,likes,comments_count,created_at) VALUES(8,15,'Presentasi hasil penelitian tentang digital orthodontics di Kongres PDGI. Teknologi aligner semakin berkembang dan memberikan pilihan treatment yang lebih nyaman untuk pasien. #Ortodonsi',NULL,28,0,'2024-01-08 09:00:00');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(1,1,2,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(2,1,3,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(3,1,6,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(4,2,4,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(5,2,8,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(6,3,9,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(7,4,5,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(8,6,7,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(9,6,8,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(10,10,9,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(11,11,12,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(12,14,15,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(13,13,2,'accepted','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(14,7,8,'pending','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(15,11,1,'pending','2026-04-03 21:53:10');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(16,19,8,'pending','2026-04-04 14:31:19');
+INSERT OR IGNORE INTO connections (id,requester_id,receiver_id,status,created_at) VALUES(17,19,2,'pending','2026-04-04 14:31:21');
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(1,1,'Dokter Spesialis Jantung dan Pembuluh Darah','RS Hermina Bekasi','RS Tipe B','Bekasi','Jawa Barat','Dokter Spesialis','Sp.JP','Tetap',35000000,60000000,1,'Dibutuhkan Dokter Spesialis Jantung dan Pembuluh Darah untuk bergabung dengan tim kardiologi RS Hermina Bekasi. Bertanggung jawab atas pelayanan rawat jalan dan rawat inap kardiologi, prosedur diagnostik non-invasif, serta konsultasi antar bagian.','- STR dan SIP aktif
 - Pengalaman minimal 2 tahun
 - Sertifikat ACLS
 - Mampu melakukan ekokardiografi
 - Bersedia on-call',1,'2026-04-03 21:53:10');
-INSERT OR IGNORE INTO jobs VALUES(2,5,'Dokter Umum Puskesmas','Puskesmas Kecamatan Cilincing','Puskesmas','Jakarta Utara','DKI Jakarta','Dokter Umum',NULL,'BLUD',12000000,18000000,1,'Puskesmas Kecamatan Cilincing membuka lowongan untuk Dokter Umum dengan status BLUD. Bertanggung jawab atas pelayanan kesehatan dasar, program promotif-preventif, dan pengelolaan program kesehatan wilayah.','- STR aktif
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(2,5,'Dokter Umum Puskesmas','Puskesmas Kecamatan Cilincing','Puskesmas','Jakarta Utara','DKI Jakarta','Dokter Umum',NULL,'BLUD',12000000,18000000,1,'Puskesmas Kecamatan Cilincing membuka lowongan untuk Dokter Umum dengan status BLUD. Bertanggung jawab atas pelayanan kesehatan dasar, program promotif-preventif, dan pengelolaan program kesehatan wilayah.','- STR aktif
 - Sertifikat ATLS/ACLS diutamakan
 - Pengalaman di Puskesmas diutamakan
 - Bersedia ditempatkan di Jakarta Utara
 - Mampu bekerja dalam tim',1,'2026-04-03 21:53:10');
-INSERT OR IGNORE INTO jobs VALUES(3,6,'Perawat ICU','RS Mayapada Tangerang','RS Tipe B','Tangerang','Banten','Ners (S1+Profesi)',NULL,'Kontrak',8000000,12000000,1,'RS Mayapada Tangerang membutuhkan Perawat ICU untuk unit perawatan intensif dewasa. Harus mampu mengoperasikan ventilator, monitoring hemodinamik, dan memberikan asuhan keperawatan intensif.','- Ners (S1 + Profesi)
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(3,6,'Perawat ICU','RS Mayapada Tangerang','RS Tipe B','Tangerang','Banten','Ners (S1+Profesi)',NULL,'Kontrak',8000000,12000000,1,'RS Mayapada Tangerang membutuhkan Perawat ICU untuk unit perawatan intensif dewasa. Harus mampu mengoperasikan ventilator, monitoring hemodinamik, dan memberikan asuhan keperawatan intensif.','- Ners (S1 + Profesi)
 - STR aktif
 - Sertifikat BTCLS dan ACLS
 - Pengalaman ICU minimal 1 tahun
 - Bersedia shift',1,'2026-04-03 21:53:10');
-INSERT OR IGNORE INTO jobs VALUES(4,10,'Bidan Klinik Pratama','Klinik Pratama Sehat Ibu dan Anak','Klinik Pratama','Sleman','DI Yogyakarta','Bidan Ahli (D4/S1)',NULL,'Tetap',5500000,8000000,1,'Dibutuhkan Bidan untuk pelayanan ANC, pertolongan persalinan, dan pelayanan KB di Klinik Pratama. Lingkungan kerja nyaman dengan fasilitas memadai.','- D4/S1 Kebidanan
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(4,10,'Bidan Klinik Pratama','Klinik Pratama Sehat Ibu dan Anak','Klinik Pratama','Sleman','DI Yogyakarta','Bidan Ahli (D4/S1)',NULL,'Tetap',5500000,8000000,1,'Dibutuhkan Bidan untuk pelayanan ANC, pertolongan persalinan, dan pelayanan KB di Klinik Pratama. Lingkungan kerja nyaman dengan fasilitas memadai.','- D4/S1 Kebidanan
 - STR dan SIP aktif
 - Pengalaman minimal 1 tahun
 - Sertifikat APN
 - Ramah dan komunikatif',1,'2026-04-03 21:53:10');
-INSERT OR IGNORE INTO jobs VALUES(5,11,'Apoteker Rumah Sakit','RS Islam Jakarta Cempaka Putih','RS Tipe B','Jakarta Pusat','DKI Jakarta','Apoteker',NULL,'Tetap',10000000,15000000,1,'RS Islam Jakarta membutuhkan Apoteker untuk instalasi farmasi rumah sakit. Bertanggung jawab atas dispensing, clinical pharmacy, dan medication safety.','- Profesi Apoteker
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(5,11,'Apoteker Rumah Sakit','RS Islam Jakarta Cempaka Putih','RS Tipe B','Jakarta Pusat','DKI Jakarta','Apoteker',NULL,'Tetap',10000000,15000000,1,'RS Islam Jakarta membutuhkan Apoteker untuk instalasi farmasi rumah sakit. Bertanggung jawab atas dispensing, clinical pharmacy, dan medication safety.','- Profesi Apoteker
 - STR dan SIPA aktif
 - Pengalaman di RS minimal 1 tahun
 - Memahami sistem formularium
 - Terampil menggunakan SIMRS',1,'2026-04-03 21:53:10');
-INSERT OR IGNORE INTO jobs VALUES(6,16,'Dokter Spesialis Penyakit Dalam','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','DKI Jakarta','Dokter Spesialis','Sp.PD','Tetap',40000000,70000000,1,'RSCM membuka lowongan untuk Dokter Spesialis Penyakit Dalam. Bergabung dengan tim internist terbaik di rumah sakit rujukan nasional. Kesempatan untuk terlibat dalam penelitian klinis dan pendidikan kedokteran.','- STR dan SIP aktif
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(6,16,'Dokter Spesialis Penyakit Dalam','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','DKI Jakarta','Dokter Spesialis','Sp.PD','Tetap',40000000,70000000,1,'RSCM membuka lowongan untuk Dokter Spesialis Penyakit Dalam. Bergabung dengan tim internist terbaik di rumah sakit rujukan nasional. Kesempatan untuk terlibat dalam penelitian klinis dan pendidikan kedokteran.','- STR dan SIP aktif
 - Lulusan program spesialis terakreditasi
 - Pengalaman minimal 3 tahun
 - Publikasi ilmiah diutamakan
 - Mampu bekerja dalam tim multidisiplin',1,'2026-03-29T21:53:13.414Z');
-INSERT OR IGNORE INTO jobs VALUES(7,16,'Perawat ICU Dewasa','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','DKI Jakarta','Ners (S1+Profesi)',NULL,'Kontrak',10000000,15000000,1,'Dibutuhkan Perawat ICU untuk unit perawatan intensif dewasa RSCM. Menangani pasien kritis dengan berbagai kasus kompleks. Kesempatan pengembangan karir dan pelatihan berkelanjutan.','- Ners (S1 + Profesi)
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(7,16,'Perawat ICU Dewasa','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','DKI Jakarta','Ners (S1+Profesi)',NULL,'Kontrak',10000000,15000000,1,'Dibutuhkan Perawat ICU untuk unit perawatan intensif dewasa RSCM. Menangani pasien kritis dengan berbagai kasus kompleks. Kesempatan pengembangan karir dan pelatihan berkelanjutan.','- Ners (S1 + Profesi)
 - STR aktif
 - Sertifikat BTCLS dan ACLS wajib
 - Pengalaman ICU minimal 2 tahun
 - Mampu mengoperasikan ventilator dan monitoring invasif',1,'2026-03-31T21:53:13.414Z');
-INSERT OR IGNORE INTO jobs VALUES(8,16,'Apoteker Klinis','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','DKI Jakarta','Apoteker',NULL,'Tetap',12000000,18000000,1,'RSCM membutuhkan Apoteker Klinis untuk instalasi farmasi. Bertanggung jawab atas clinical pharmacy service, medication reconciliation, dan drug information service.','- Profesi Apoteker
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(8,16,'Apoteker Klinis','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','DKI Jakarta','Apoteker',NULL,'Tetap',12000000,18000000,1,'RSCM membutuhkan Apoteker Klinis untuk instalasi farmasi. Bertanggung jawab atas clinical pharmacy service, medication reconciliation, dan drug information service.','- Profesi Apoteker
 - STR dan SIPA aktif
 - S2 Farmasi Klinis diutamakan
 - Pengalaman di RS tipe A minimal 1 tahun
 - Sertifikat pelatihan farmasi klinis',1,'2026-03-27T21:53:13.414Z');
-INSERT OR IGNORE INTO jobs VALUES(9,17,'Dokter Umum IGD','RS Siloam Semanggi','RS Tipe A','Jakarta Selatan','DKI Jakarta','Dokter Umum',NULL,'Kontrak',20000000,30000000,1,'Siloam Hospitals Semanggi membuka lowongan Dokter Umum untuk instalasi gawat darurat 24 jam. Sistem kerja shift dengan kompensasi kompetitif dan benefit lengkap.','- STR aktif
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(9,17,'Dokter Umum IGD','RS Siloam Semanggi','RS Tipe A','Jakarta Selatan','DKI Jakarta','Dokter Umum',NULL,'Kontrak',20000000,30000000,1,'Siloam Hospitals Semanggi membuka lowongan Dokter Umum untuk instalasi gawat darurat 24 jam. Sistem kerja shift dengan kompensasi kompetitif dan benefit lengkap.','- STR aktif
 - Sertifikat ATLS dan ACLS wajib
 - Pengalaman IGD minimal 1 tahun
 - Mampu berkomunikasi dalam Bahasa Inggris
 - Bersedia kerja shift',1,'2026-04-01T21:53:13.414Z');
-INSERT OR IGNORE INTO jobs VALUES(10,17,'Dokter Spesialis Anak','RS Siloam Kebon Jeruk','RS Tipe B','Jakarta Barat','DKI Jakarta','Dokter Spesialis','Sp.A','Tetap',45000000,75000000,1,'Siloam Hospitals Kebon Jeruk membutuhkan Dokter Spesialis Anak untuk memperkuat layanan pediatrik. Fasilitas lengkap termasuk NICU dan PICU.','- STR dan SIP aktif
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(10,17,'Dokter Spesialis Anak','RS Siloam Kebon Jeruk','RS Tipe B','Jakarta Barat','DKI Jakarta','Dokter Spesialis','Sp.A','Tetap',45000000,75000000,1,'Siloam Hospitals Kebon Jeruk membutuhkan Dokter Spesialis Anak untuk memperkuat layanan pediatrik. Fasilitas lengkap termasuk NICU dan PICU.','- STR dan SIP aktif
 - Board certified Sp.A
 - Pengalaman minimal 3 tahun
 - Subspesialis diutamakan
 - Bersedia on-call',1,'2026-03-30T21:53:13.414Z');
-INSERT OR IGNORE INTO jobs VALUES(11,17,'Bidan Kamar Bersalin','RS Siloam Surabaya','RS Tipe B','Surabaya','Jawa Timur','Bidan Ahli (D4/S1)',NULL,'Tetap',7000000,10000000,1,'RS Siloam Surabaya membutuhkan Bidan untuk kamar bersalin. Menangani persalinan normal dan asistensi operasi sectio caesarea.','- D4/S1 Kebidanan
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(11,17,'Bidan Kamar Bersalin','RS Siloam Surabaya','RS Tipe B','Surabaya','Jawa Timur','Bidan Ahli (D4/S1)',NULL,'Tetap',7000000,10000000,1,'RS Siloam Surabaya membutuhkan Bidan untuk kamar bersalin. Menangani persalinan normal dan asistensi operasi sectio caesarea.','- D4/S1 Kebidanan
 - STR dan SIP aktif
 - Sertifikat APN
 - Pengalaman di kamar bersalin minimal 1 tahun
 - Bersedia shift',1,'2026-03-28T21:53:13.414Z');
-INSERT OR IGNORE INTO jobs VALUES(12,17,'Fisioterapis Rehabilitasi','RS Siloam Semanggi','RS Tipe A','Jakarta Selatan','DKI Jakarta','Fisioterapis',NULL,'Kontrak',8000000,12000000,1,'Unit Rehabilitasi Medik RS Siloam Semanggi membutuhkan Fisioterapis untuk layanan rehabilitasi muskuloskeletal dan neurologis.','- S1 Fisioterapi
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(12,17,'Fisioterapis Rehabilitasi','RS Siloam Semanggi','RS Tipe A','Jakarta Selatan','DKI Jakarta','Fisioterapis',NULL,'Kontrak',8000000,12000000,1,'Unit Rehabilitasi Medik RS Siloam Semanggi membutuhkan Fisioterapis untuk layanan rehabilitasi muskuloskeletal dan neurologis.','- S1 Fisioterapi
 - STR aktif
 - Pengalaman minimal 1 tahun
 - Sertifikasi McKenzie/Manual Therapy diutamakan',1,'2026-04-02T21:53:13.414Z');
-INSERT OR IGNORE INTO jobs VALUES(13,18,'Analis Kesehatan / Teknisi Lab','Prodia Lab Jakarta Kramat','Klinik Utama','Jakarta Pusat','DKI Jakarta','Analis Kesehatan',NULL,'Tetap',7000000,10000000,1,'Prodia Widyahusada membuka lowongan Analis Kesehatan untuk laboratorium pusat Jakarta. Menangani pemeriksaan hematologi, kimia klinik, dan immunoserologi.','- D3/S1 Analis Kesehatan/Teknologi Laboratorium Medik
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(13,18,'Analis Kesehatan / Teknisi Lab','Prodia Lab Jakarta Kramat','Klinik Utama','Jakarta Pusat','DKI Jakarta','Analis Kesehatan',NULL,'Tetap',7000000,10000000,1,'Prodia Widyahusada membuka lowongan Analis Kesehatan untuk laboratorium pusat Jakarta. Menangani pemeriksaan hematologi, kimia klinik, dan immunoserologi.','- D3/S1 Analis Kesehatan/Teknologi Laboratorium Medik
 - STR aktif
 - Pengalaman di laboratorium klinik minimal 1 tahun
 - Memahami prosedur mutu ISO 15189
 - Teliti dan detail oriented',1,'2026-03-31T21:53:13.414Z');
-INSERT OR IGNORE INTO jobs VALUES(14,18,'Dokter Umum Klinik','Prodia Clinic Surabaya','Klinik Utama','Surabaya','Jawa Timur','Dokter Umum',NULL,'Paruh Waktu',8000000,12000000,1,'Prodia Clinic Surabaya membutuhkan Dokter Umum untuk pelayanan medical check-up dan konsultasi kesehatan. Jam kerja fleksibel.','- STR aktif
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(14,18,'Dokter Umum Klinik','Prodia Clinic Surabaya','Klinik Utama','Surabaya','Jawa Timur','Dokter Umum',NULL,'Paruh Waktu',8000000,12000000,1,'Prodia Clinic Surabaya membutuhkan Dokter Umum untuk pelayanan medical check-up dan konsultasi kesehatan. Jam kerja fleksibel.','- STR aktif
 - Pengalaman MCU diutamakan
 - Mampu interpretasi hasil laboratorium
 - Komunikatif dan ramah
 - Bersedia kerja weekend',1,'2026-03-26T21:53:13.414Z');
-INSERT OR IGNORE INTO jobs VALUES(15,18,'Perawat Phlebotomist','Prodia Lab Bandung','Klinik Utama','Bandung','Jawa Barat','Ners (S1+Profesi)',NULL,'Kontrak',5500000,8000000,1,'Prodia Bandung membutuhkan Perawat untuk pelayanan pengambilan sampel darah (phlebotomy) dan pelayanan pasien.','- D3 Keperawatan / Ners
+INSERT OR IGNORE INTO jobs (id,posted_by,title,facility_name,facility_type,location,province,profession_type,specialization,employment_type,salary_min,salary_max,bpjs_required,description,requirements,is_active,created_at) VALUES(15,18,'Perawat Phlebotomist','Prodia Lab Bandung','Klinik Utama','Bandung','Jawa Barat','Ners (S1+Profesi)',NULL,'Kontrak',5500000,8000000,1,'Prodia Bandung membutuhkan Perawat untuk pelayanan pengambilan sampel darah (phlebotomy) dan pelayanan pasien.','- D3 Keperawatan / Ners
 - STR aktif
 - Sertifikat Phlebotomy diutamakan
 - Pengalaman minimal 6 bulan
 - Teliti dan memiliki empati tinggi',1,'2026-03-24T21:53:13.414Z');
-INSERT OR IGNORE INTO experiences VALUES(1,1,'Dokter Spesialis Jantung dan Pembuluh Darah','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','2018-01',NULL,1,'Pelayanan kardiologi intervensi dan elektrofisiologi');
-INSERT OR IGNORE INTO experiences VALUES(2,1,'Fellow Kardiologi Intervensi','National Heart Centre Singapore',NULL,'Singapore','2016-01','2018-01',0,'Fellowship intervensi koroner perkutan');
-INSERT OR IGNORE INTO experiences VALUES(3,2,'Dokter Spesialis Anak','RS Siloam Semanggi','RS Tipe A','Jakarta Selatan','2019-06',NULL,1,'Pelayanan tumbuh kembang dan nutrisi pediatrik');
-INSERT OR IGNORE INTO experiences VALUES(4,2,'Dokter Spesialis Anak','RS Pondok Indah','RS Tipe B','Jakarta Selatan','2016-01','2019-06',0,NULL);
-INSERT OR IGNORE INTO experiences VALUES(5,3,'Konsultan Fetomaternal','RS Bunda Menteng','RS Tipe B','Jakarta Pusat','2015-03',NULL,1,'Penanganan kehamilan risiko tinggi dan USG 4D');
-INSERT OR IGNORE INTO experiences VALUES(6,4,'Dokter Puskesmas','Puskesmas Cikutra','Puskesmas','Bandung','2020-01',NULL,1,'Pelayanan kesehatan primer dan program imunisasi');
-INSERT OR IGNORE INTO experiences VALUES(7,5,'Kepala Puskesmas','Puskesmas Tanjung Perak','Puskesmas','Surabaya','2021-06',NULL,1,'Manajemen Puskesmas dan program TB-HIV');
-INSERT OR IGNORE INTO experiences VALUES(8,5,'Dokter Puskesmas','Puskesmas Wonokromo','Puskesmas','Surabaya','2017-01','2021-06',0,NULL);
-INSERT OR IGNORE INTO experiences VALUES(9,6,'Perawat ICU','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','2019-03',NULL,1,'Asuhan keperawatan intensif dan tim Code Blue');
-INSERT OR IGNORE INTO experiences VALUES(10,7,'Perawat IGD','RSUP Fatmawati','RS Tipe A','Jakarta Selatan','2020-07',NULL,1,'Emergency nursing dan triase');
-INSERT OR IGNORE INTO experiences VALUES(11,8,'Perawat Maternitas','RS Harapan Kita','RS Tipe A','Jakarta Barat','2018-09',NULL,1,'Perawatan ibu dan bayi pasca operasi jantung');
-INSERT OR IGNORE INTO experiences VALUES(12,9,'Bidan Pelaksana','Klinik Pratama Bunda Sehat','Klinik Pratama','Jakarta Timur','2020-04',NULL,1,'ANC terpadu dan persalinan normal');
-INSERT OR IGNORE INTO experiences VALUES(13,10,'Bidan Senior','Klinik Pratama Ibu dan Anak Yogyakarta','Klinik Pratama','Yogyakarta','2017-08',NULL,1,'Pelayanan kebidanan dan konseling laktasi');
-INSERT OR IGNORE INTO experiences VALUES(14,11,'Apoteker Rumah Sakit','RS Tipe C Kota Tangerang','RS Tipe C','Tangerang','2021-01',NULL,1,'Farmasi klinis dan manajemen formularium');
-INSERT OR IGNORE INTO experiences VALUES(15,12,'Fisioterapis','RS Ortopedi Prof. Dr. R. Soeharso Surakarta','RS Tipe A','Surakarta','2018-05',NULL,1,'Rehabilitasi ortopedi pasca operasi');
-INSERT OR IGNORE INTO experiences VALUES(16,13,'Psikolog Klinis','Klinik Jiwa Harmoni','Klinik Utama','Jakarta Selatan','2020-10',NULL,1,'Terapi CBT dan EMDR untuk gangguan kecemasan dan trauma');
-INSERT OR IGNORE INTO experiences VALUES(17,14,'Dokter Gigi','Klinik Gigi Senyum Cerah','Klinik Pratama','Jakarta Utara','2019-11',NULL,1,'Estetika dental dan endodontik');
-INSERT OR IGNORE INTO experiences VALUES(18,15,'Spesialis Ortodonsi','RS Gigi dan Mulut FKG UI','RS Tipe A','Jakarta Pusat','2017-02',NULL,1,'Perawatan maloklusi dan ortodonsi digital');
-INSERT OR IGNORE INTO education VALUES(1,1,'Universitas Indonesia','Spesialis','Kardiologi dan Kedokteran Vaskular',2012,2016,NULL);
-INSERT OR IGNORE INTO education VALUES(2,1,'Universitas Indonesia','S1 Kedokteran','Pendidikan Dokter',2005,2011,NULL);
-INSERT OR IGNORE INTO education VALUES(3,2,'Universitas Indonesia','Spesialis','Ilmu Kesehatan Anak',2012,2016,NULL);
-INSERT OR IGNORE INTO education VALUES(4,2,'Universitas Indonesia','S1 Kedokteran','Pendidikan Dokter',2006,2012,NULL);
-INSERT OR IGNORE INTO education VALUES(5,3,'Universitas Gadjah Mada','Subspesialis','Fetomaternal',2012,2015,NULL);
-INSERT OR IGNORE INTO education VALUES(6,3,'Universitas Gadjah Mada','Spesialis','Obstetri dan Ginekologi',2007,2012,NULL);
-INSERT OR IGNORE INTO education VALUES(7,4,'Universitas Padjadjaran','S1 Kedokteran','Pendidikan Dokter',2013,2019,NULL);
-INSERT OR IGNORE INTO education VALUES(8,5,'Universitas Airlangga','S2 Kesehatan Masyarakat','Manajemen Kesehatan',2019,2021,NULL);
-INSERT OR IGNORE INTO education VALUES(9,5,'Universitas Airlangga','S1 Kedokteran','Pendidikan Dokter',2010,2016,NULL);
-INSERT OR IGNORE INTO education VALUES(10,6,'Universitas Indonesia','Profesi Ners','Keperawatan',2017,2018,NULL);
-INSERT OR IGNORE INTO education VALUES(11,6,'Universitas Indonesia','S1 Keperawatan','Ilmu Keperawatan',2013,2017,NULL);
-INSERT OR IGNORE INTO education VALUES(12,7,'Universitas Padjadjaran','Profesi Ners','Keperawatan',2018,2019,NULL);
-INSERT OR IGNORE INTO education VALUES(13,7,'Universitas Padjadjaran','S1 Keperawatan','Ilmu Keperawatan',2014,2018,NULL);
-INSERT OR IGNORE INTO education VALUES(14,8,'Universitas Gadjah Mada','Profesi Ners','Keperawatan Maternitas',2016,2017,NULL);
-INSERT OR IGNORE INTO education VALUES(15,9,'Poltekkes Kemenkes Jakarta III','D4 Kebidanan','Kebidanan',2016,2020,NULL);
-INSERT OR IGNORE INTO education VALUES(16,10,'Poltekkes Kemenkes Yogyakarta','D4 Kebidanan','Kebidanan',2013,2017,NULL);
-INSERT OR IGNORE INTO education VALUES(17,11,'Universitas Pancasila','Profesi Apoteker','Farmasi',2019,2020,NULL);
-INSERT OR IGNORE INTO education VALUES(18,11,'Universitas Pancasila','S1 Farmasi','Ilmu Farmasi',2015,2019,NULL);
-INSERT OR IGNORE INTO education VALUES(19,12,'Universitas Muhammadiyah Surakarta','S1 Fisioterapi','Fisioterapi',2013,2017,NULL);
-INSERT OR IGNORE INTO education VALUES(20,13,'Universitas Indonesia','S2 Profesi Psikolog','Psikologi Klinis',2017,2020,NULL);
-INSERT OR IGNORE INTO education VALUES(21,13,'Universitas Indonesia','S1 Psikologi','Psikologi',2013,2017,NULL);
-INSERT OR IGNORE INTO education VALUES(22,14,'Universitas Trisakti','S1 Kedokteran Gigi','Kedokteran Gigi',2013,2019,NULL);
-INSERT OR IGNORE INTO education VALUES(23,15,'Universitas Indonesia','Spesialis','Ortodonsia',2013,2017,NULL);
-INSERT OR IGNORE INTO education VALUES(24,15,'Universitas Indonesia','S1 Kedokteran Gigi','Kedokteran Gigi',2007,2013,NULL);
-INSERT OR IGNORE INTO skills VALUES(1,1,'Intervensi Koroner Perkutan',45);
-INSERT OR IGNORE INTO skills VALUES(2,1,'Elektrofisiologi',32);
-INSERT OR IGNORE INTO skills VALUES(3,1,'Ekokardiografi',28);
-INSERT OR IGNORE INTO skills VALUES(4,1,'ACLS',25);
-INSERT OR IGNORE INTO skills VALUES(5,2,'Tumbuh Kembang Anak',38);
-INSERT OR IGNORE INTO skills VALUES(6,2,'Nutrisi Pediatrik',30);
-INSERT OR IGNORE INTO skills VALUES(7,2,'Imunisasi',25);
-INSERT OR IGNORE INTO skills VALUES(8,2,'PALS',20);
-INSERT OR IGNORE INTO skills VALUES(9,3,'USG 4D',50);
-INSERT OR IGNORE INTO skills VALUES(10,3,'Kehamilan Risiko Tinggi',42);
-INSERT OR IGNORE INTO skills VALUES(11,3,'Fetomaternal',35);
-INSERT OR IGNORE INTO skills VALUES(12,4,'Kesehatan Masyarakat',15);
-INSERT OR IGNORE INTO skills VALUES(13,4,'Imunisasi',12);
-INSERT OR IGNORE INTO skills VALUES(14,4,'Posbindu PTM',10);
-INSERT OR IGNORE INTO skills VALUES(15,5,'Manajemen Puskesmas',20);
-INSERT OR IGNORE INTO skills VALUES(16,5,'TB-HIV',18);
-INSERT OR IGNORE INTO skills VALUES(17,5,'Kesehatan Pelayaran',12);
-INSERT OR IGNORE INTO skills VALUES(18,6,'BTCLS',22);
-INSERT OR IGNORE INTO skills VALUES(19,6,'ACLS',20);
-INSERT OR IGNORE INTO skills VALUES(20,6,'Ventilator Management',18);
-INSERT OR IGNORE INTO skills VALUES(21,6,'Hemodinamik',15);
-INSERT OR IGNORE INTO skills VALUES(22,7,'Triase',25);
-INSERT OR IGNORE INTO skills VALUES(23,7,'BTCLS',22);
-INSERT OR IGNORE INTO skills VALUES(24,7,'ACLS',18);
-INSERT OR IGNORE INTO skills VALUES(25,7,'Disaster Response',15);
-INSERT OR IGNORE INTO skills VALUES(26,8,'Asuhan Neonatal',20);
-INSERT OR IGNORE INTO skills VALUES(27,8,'Perawatan Maternitas',18);
-INSERT OR IGNORE INTO skills VALUES(28,8,'Laktasi',15);
-INSERT OR IGNORE INTO skills VALUES(29,9,'ANC Terpadu',12);
-INSERT OR IGNORE INTO skills VALUES(30,9,'Persalinan Normal',15);
-INSERT OR IGNORE INTO skills VALUES(31,9,'KB Pascasalin',10);
-INSERT OR IGNORE INTO skills VALUES(32,10,'Konseling Laktasi',25);
-INSERT OR IGNORE INTO skills VALUES(33,10,'Perawatan Neonatal',20);
-INSERT OR IGNORE INTO skills VALUES(34,10,'ANC',18);
-INSERT OR IGNORE INTO skills VALUES(35,11,'Farmasi Klinis',15);
-INSERT OR IGNORE INTO skills VALUES(36,11,'Manajemen Obat',12);
-INSERT OR IGNORE INTO skills VALUES(37,11,'Pharmacovigilance',10);
-INSERT OR IGNORE INTO skills VALUES(38,12,'Terapi Manual',22);
-INSERT OR IGNORE INTO skills VALUES(39,12,'Rehabilitasi Ortopedi',20);
-INSERT OR IGNORE INTO skills VALUES(40,12,'Cedera Olahraga',18);
-INSERT OR IGNORE INTO skills VALUES(41,13,'CBT',25);
-INSERT OR IGNORE INTO skills VALUES(42,13,'EMDR',20);
-INSERT OR IGNORE INTO skills VALUES(43,13,'Psikometri',15);
-INSERT OR IGNORE INTO skills VALUES(44,14,'Estetika Dental',18);
-INSERT OR IGNORE INTO skills VALUES(45,14,'Endodontik',15);
-INSERT OR IGNORE INTO skills VALUES(46,14,'Scaling & Root Planing',12);
-INSERT OR IGNORE INTO skills VALUES(47,15,'Ortodonsi Digital',30);
-INSERT OR IGNORE INTO skills VALUES(48,15,'Aligner',25);
-INSERT OR IGNORE INTO skills VALUES(49,15,'Bracket',28);
-INSERT OR IGNORE INTO job_applications VALUES(1,6,1,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-23T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(2,6,2,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-26T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(3,7,2,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-30T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(4,7,3,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-03-24T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(5,7,4,'accepted',NULL,'2026-03-23T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(6,8,3,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-03-20T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(7,8,4,'accepted',NULL,'2026-03-26T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(8,8,5,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-04-01T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(9,8,6,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-27T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(10,9,4,'accepted',NULL,'2026-03-24T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(11,9,5,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-21T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(12,10,5,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-30T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(13,10,6,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-29T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(14,10,7,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-29T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(15,11,6,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-31T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(16,11,7,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-30T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(17,11,8,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-03-21T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(18,11,9,'accepted',NULL,'2026-04-01T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(19,12,7,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-04-01T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(20,12,8,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-03-31T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(21,13,8,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-04-02T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(22,13,9,'accepted',NULL,'2026-04-01T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(23,13,10,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-30T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(24,14,9,'accepted',NULL,'2026-03-20T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(25,14,10,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-20T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(26,14,1,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-21T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(27,14,2,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-20T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(28,15,10,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-29T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO job_applications VALUES(29,15,1,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-28T21:53:13.414Z','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO saved_candidates VALUES(1,16,1,'Kandidat kuat untuk posisi spesialis','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO saved_candidates VALUES(2,16,6,'Perawat ICU berpengalaman','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO saved_candidates VALUES(3,16,3,'Apoteker potensial','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO saved_candidates VALUES(4,17,2,'Sp.A berkualitas','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO saved_candidates VALUES(5,17,7,'Perawat IGD kompeten','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO saved_candidates VALUES(6,17,9,'Bidan berpengalaman','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO saved_candidates VALUES(7,17,5,'Fisioterapis terampil','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO saved_candidates VALUES(8,18,4,'Dokter umum untuk MCU','2026-04-03 21:53:13');
-INSERT OR IGNORE INTO saved_candidates VALUES(9,18,8,'Perawat untuk phlebotomy','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(1,1,'Dokter Spesialis Jantung dan Pembuluh Darah','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','2018-01',NULL,1,'Pelayanan kardiologi intervensi dan elektrofisiologi');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(2,1,'Fellow Kardiologi Intervensi','National Heart Centre Singapore',NULL,'Singapore','2016-01','2018-01',0,'Fellowship intervensi koroner perkutan');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(3,2,'Dokter Spesialis Anak','RS Siloam Semanggi','RS Tipe A','Jakarta Selatan','2019-06',NULL,1,'Pelayanan tumbuh kembang dan nutrisi pediatrik');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(4,2,'Dokter Spesialis Anak','RS Pondok Indah','RS Tipe B','Jakarta Selatan','2016-01','2019-06',0,NULL);
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(5,3,'Konsultan Fetomaternal','RS Bunda Menteng','RS Tipe B','Jakarta Pusat','2015-03',NULL,1,'Penanganan kehamilan risiko tinggi dan USG 4D');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(6,4,'Dokter Puskesmas','Puskesmas Cikutra','Puskesmas','Bandung','2020-01',NULL,1,'Pelayanan kesehatan primer dan program imunisasi');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(7,5,'Kepala Puskesmas','Puskesmas Tanjung Perak','Puskesmas','Surabaya','2021-06',NULL,1,'Manajemen Puskesmas dan program TB-HIV');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(8,5,'Dokter Puskesmas','Puskesmas Wonokromo','Puskesmas','Surabaya','2017-01','2021-06',0,NULL);
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(9,6,'Perawat ICU','RSUPN Dr. Cipto Mangunkusumo','RS Tipe A','Jakarta Pusat','2019-03',NULL,1,'Asuhan keperawatan intensif dan tim Code Blue');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(10,7,'Perawat IGD','RSUP Fatmawati','RS Tipe A','Jakarta Selatan','2020-07',NULL,1,'Emergency nursing dan triase');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(11,8,'Perawat Maternitas','RS Harapan Kita','RS Tipe A','Jakarta Barat','2018-09',NULL,1,'Perawatan ibu dan bayi pasca operasi jantung');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(12,9,'Bidan Pelaksana','Klinik Pratama Bunda Sehat','Klinik Pratama','Jakarta Timur','2020-04',NULL,1,'ANC terpadu dan persalinan normal');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(13,10,'Bidan Senior','Klinik Pratama Ibu dan Anak Yogyakarta','Klinik Pratama','Yogyakarta','2017-08',NULL,1,'Pelayanan kebidanan dan konseling laktasi');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(14,11,'Apoteker Rumah Sakit','RS Tipe C Kota Tangerang','RS Tipe C','Tangerang','2021-01',NULL,1,'Farmasi klinis dan manajemen formularium');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(15,12,'Fisioterapis','RS Ortopedi Prof. Dr. R. Soeharso Surakarta','RS Tipe A','Surakarta','2018-05',NULL,1,'Rehabilitasi ortopedi pasca operasi');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(16,13,'Psikolog Klinis','Klinik Jiwa Harmoni','Klinik Utama','Jakarta Selatan','2020-10',NULL,1,'Terapi CBT dan EMDR untuk gangguan kecemasan dan trauma');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(17,14,'Dokter Gigi','Klinik Gigi Senyum Cerah','Klinik Pratama','Jakarta Utara','2019-11',NULL,1,'Estetika dental dan endodontik');
+INSERT OR IGNORE INTO experiences (id,user_id,title,facility_name,facility_type,location,start_date,end_date,is_current,description) VALUES(18,15,'Spesialis Ortodonsi','RS Gigi dan Mulut FKG UI','RS Tipe A','Jakarta Pusat','2017-02',NULL,1,'Perawatan maloklusi dan ortodonsi digital');
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(1,1,'Universitas Indonesia','Spesialis','Kardiologi dan Kedokteran Vaskular',2012,2016,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(2,1,'Universitas Indonesia','S1 Kedokteran','Pendidikan Dokter',2005,2011,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(3,2,'Universitas Indonesia','Spesialis','Ilmu Kesehatan Anak',2012,2016,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(4,2,'Universitas Indonesia','S1 Kedokteran','Pendidikan Dokter',2006,2012,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(5,3,'Universitas Gadjah Mada','Subspesialis','Fetomaternal',2012,2015,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(6,3,'Universitas Gadjah Mada','Spesialis','Obstetri dan Ginekologi',2007,2012,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(7,4,'Universitas Padjadjaran','S1 Kedokteran','Pendidikan Dokter',2013,2019,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(8,5,'Universitas Airlangga','S2 Kesehatan Masyarakat','Manajemen Kesehatan',2019,2021,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(9,5,'Universitas Airlangga','S1 Kedokteran','Pendidikan Dokter',2010,2016,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(10,6,'Universitas Indonesia','Profesi Ners','Keperawatan',2017,2018,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(11,6,'Universitas Indonesia','S1 Keperawatan','Ilmu Keperawatan',2013,2017,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(12,7,'Universitas Padjadjaran','Profesi Ners','Keperawatan',2018,2019,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(13,7,'Universitas Padjadjaran','S1 Keperawatan','Ilmu Keperawatan',2014,2018,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(14,8,'Universitas Gadjah Mada','Profesi Ners','Keperawatan Maternitas',2016,2017,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(15,9,'Poltekkes Kemenkes Jakarta III','D4 Kebidanan','Kebidanan',2016,2020,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(16,10,'Poltekkes Kemenkes Yogyakarta','D4 Kebidanan','Kebidanan',2013,2017,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(17,11,'Universitas Pancasila','Profesi Apoteker','Farmasi',2019,2020,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(18,11,'Universitas Pancasila','S1 Farmasi','Ilmu Farmasi',2015,2019,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(19,12,'Universitas Muhammadiyah Surakarta','S1 Fisioterapi','Fisioterapi',2013,2017,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(20,13,'Universitas Indonesia','S2 Profesi Psikolog','Psikologi Klinis',2017,2020,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(21,13,'Universitas Indonesia','S1 Psikologi','Psikologi',2013,2017,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(22,14,'Universitas Trisakti','S1 Kedokteran Gigi','Kedokteran Gigi',2013,2019,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(23,15,'Universitas Indonesia','Spesialis','Ortodonsia',2013,2017,NULL);
+INSERT OR IGNORE INTO education (id,user_id,institution,degree,field_of_study,start_year,end_year,description) VALUES(24,15,'Universitas Indonesia','S1 Kedokteran Gigi','Kedokteran Gigi',2007,2013,NULL);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(1,1,'Intervensi Koroner Perkutan',45);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(2,1,'Elektrofisiologi',32);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(3,1,'Ekokardiografi',28);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(4,1,'ACLS',25);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(5,2,'Tumbuh Kembang Anak',38);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(6,2,'Nutrisi Pediatrik',30);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(7,2,'Imunisasi',25);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(8,2,'PALS',20);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(9,3,'USG 4D',50);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(10,3,'Kehamilan Risiko Tinggi',42);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(11,3,'Fetomaternal',35);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(12,4,'Kesehatan Masyarakat',15);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(13,4,'Imunisasi',12);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(14,4,'Posbindu PTM',10);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(15,5,'Manajemen Puskesmas',20);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(16,5,'TB-HIV',18);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(17,5,'Kesehatan Pelayaran',12);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(18,6,'BTCLS',22);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(19,6,'ACLS',20);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(20,6,'Ventilator Management',18);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(21,6,'Hemodinamik',15);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(22,7,'Triase',25);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(23,7,'BTCLS',22);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(24,7,'ACLS',18);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(25,7,'Disaster Response',15);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(26,8,'Asuhan Neonatal',20);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(27,8,'Perawatan Maternitas',18);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(28,8,'Laktasi',15);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(29,9,'ANC Terpadu',12);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(30,9,'Persalinan Normal',15);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(31,9,'KB Pascasalin',10);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(32,10,'Konseling Laktasi',25);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(33,10,'Perawatan Neonatal',20);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(34,10,'ANC',18);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(35,11,'Farmasi Klinis',15);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(36,11,'Manajemen Obat',12);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(37,11,'Pharmacovigilance',10);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(38,12,'Terapi Manual',22);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(39,12,'Rehabilitasi Ortopedi',20);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(40,12,'Cedera Olahraga',18);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(41,13,'CBT',25);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(42,13,'EMDR',20);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(43,13,'Psikometri',15);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(44,14,'Estetika Dental',18);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(45,14,'Endodontik',15);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(46,14,'Scaling & Root Planing',12);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(47,15,'Ortodonsi Digital',30);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(48,15,'Aligner',25);
+INSERT OR IGNORE INTO skills (id,user_id,name,endorsements) VALUES(49,15,'Bracket',28);
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(1,6,1,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-23T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(2,6,2,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-26T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(3,7,2,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-30T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(4,7,3,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-03-24T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(5,7,4,'accepted',NULL,'2026-03-23T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(6,8,3,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-03-20T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(7,8,4,'accepted',NULL,'2026-03-26T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(8,8,5,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-04-01T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(9,8,6,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-27T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(10,9,4,'accepted',NULL,'2026-03-24T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(11,9,5,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-21T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(12,10,5,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-30T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(13,10,6,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-29T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(14,10,7,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-29T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(15,11,6,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-31T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(16,11,7,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-30T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(17,11,8,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-03-21T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(18,11,9,'accepted',NULL,'2026-04-01T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(19,12,7,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-04-01T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(20,12,8,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-03-31T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(21,13,8,'shortlisted','Saya telah mengikuti perkembangan fasilitas ini dan sangat antusias untuk bergabung. Pengalaman kerja saya sangat relevan dengan posisi yang ditawarkan.','2026-04-02T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(22,13,9,'accepted',NULL,'2026-04-01T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(23,13,10,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-30T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(24,14,9,'accepted',NULL,'2026-03-20T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(25,14,10,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-20T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(26,14,1,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-21T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(27,14,2,'reviewed','Dengan hormat, saya ingin melamar posisi yang ditawarkan. Saya memiliki kompetensi dan motivasi yang kuat untuk berkembang bersama institusi Anda.','2026-03-20T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(28,15,10,'rejected','Posisi ini sangat sesuai dengan latar belakang dan minat profesional saya. Saya berharap dapat berkontribusi pada pelayanan kesehatan yang lebih baik.','2026-03-29T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO job_applications (id,job_id,applicant_id,status,cover_letter,applied_at,updated_at) VALUES(29,15,1,'pending','Saya sangat tertarik dengan posisi ini dan yakin dapat berkontribusi secara signifikan. Dengan pengalaman saya di bidang ini, saya siap menghadapi tantangan baru.','2026-03-28T21:53:13.414Z','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO saved_candidates (id,employer_id,candidate_id,notes,saved_at) VALUES(1,16,1,'Kandidat kuat untuk posisi spesialis','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO saved_candidates (id,employer_id,candidate_id,notes,saved_at) VALUES(2,16,6,'Perawat ICU berpengalaman','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO saved_candidates (id,employer_id,candidate_id,notes,saved_at) VALUES(3,16,3,'Apoteker potensial','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO saved_candidates (id,employer_id,candidate_id,notes,saved_at) VALUES(4,17,2,'Sp.A berkualitas','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO saved_candidates (id,employer_id,candidate_id,notes,saved_at) VALUES(5,17,7,'Perawat IGD kompeten','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO saved_candidates (id,employer_id,candidate_id,notes,saved_at) VALUES(6,17,9,'Bidan berpengalaman','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO saved_candidates (id,employer_id,candidate_id,notes,saved_at) VALUES(7,17,5,'Fisioterapis terampil','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO saved_candidates (id,employer_id,candidate_id,notes,saved_at) VALUES(8,18,4,'Dokter umum untuk MCU','2026-04-03 21:53:13');
+INSERT OR IGNORE INTO saved_candidates (id,employer_id,candidate_id,notes,saved_at) VALUES(9,18,8,'Perawat untuk phlebotomy','2026-04-03 21:53:13');
