@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS users (
     phone TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
-  , account_type TEXT DEFAULT 'nakes', employer_facility_name TEXT, employer_facility_type TEXT, employer_description TEXT, employer_website TEXT, employer_size TEXT);
+  , account_type TEXT DEFAULT 'nakes', employer_facility_name TEXT, employer_facility_type TEXT, employer_description TEXT, employer_website TEXT, employer_size TEXT, is_admin INTEGER DEFAULT 0);
 CREATE TABLE IF NOT EXISTS posts (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
